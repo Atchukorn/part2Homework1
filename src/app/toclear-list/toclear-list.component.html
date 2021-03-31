@@ -1,0 +1,17 @@
+<div class="container">
+  <p>My Task today</p>
+  <app-task *ngFor="let loop of task" [taskObj]="loop" (deletetaskSignal)="deletedtask($event)" ></app-task>
+  <br>
+  <div class="new-task">
+  <p><b>Add Task</b></p>
+    <div style="padding-left:37px;">
+      Name:<input type="text" [(ngModel)]="taskName">
+    </div>
+    <br>
+    <div>
+      Description:<input type="text" [(ngModel)]="taskDescription"><br>
+    </div>
+    <p style="text-align:center">
+      <button type="button" class="btn btn-info" (click)="addtask()"  >Add</button>
+    </p>
+  </div>
